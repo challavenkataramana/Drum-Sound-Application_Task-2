@@ -1,0 +1,68 @@
+<html>
+   <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>Drum Sound App</title>
+        <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+        <!--Header Section-->
+        <header>
+            <nav>  
+                <div class="logo-group">
+                    <nav class="logo-icon">
+                        <a href="#"> <i class="fas fa-music"></i></a>
+                    </nav>    
+                    <h2 class="logo">Drum Sound Application</h2>
+                </div>
+
+            </nav>
+        </header>
+        <section class="drum-page">
+            <h1 > 
+                Enjoy the Music  <i class="fas fa-music"></i>
+            </h1>
+        </section> 
+        <div class="main-container">  
+            <!--Tones Section-->
+           <section class="drum-grid">
+                <!--You can  Add more Tone cards here -->
+                <div class="drum-card">
+                    <img src="kick.jpg" alt="Drum Img">
+                    <h2>Kick Drum</h2>
+                    <button class="drum" id="sound1" data-sound="sounds/kick.wav" data-play-text="Play&nbsp;(v)" data-stop-text="Stop&nbsp;(v)">Play&nbsp;(v)</button>
+                </div>
+                <div class="drum-card">
+                    <img src="snare.jpeg" alt="Snare Img">
+                    <h2>Snare</h2>
+                    <button class="drum" id="sound2" data-sound="sounds/snare.wav" data-play-text="Play&nbsp;(i)" data-stop-text="Stop&nbsp;(i)">Play&nbsp;(i)</button>
+                </div>
+                <div class="drum-card">
+                    <img src="hihat.png" alt="Product 1">
+                    <h2>Hihat</h2>
+                    <button class="drum" id="sound3" data-sound="sounds/hihat.wav" data-play-text="Play&nbsp;(r)" data-stop-text="Stop&nbsp;(r)">Play&nbsp;(r)</button>
+                </div>
+                <div class="drum-card">
+                    <img src="tom1.jpg" alt="Product 1">
+                    <h2>Tom</h2>
+                    <button class="drum" id="sound4" data-sound="sounds/tom1.wav" data-play-text="Play&nbsp;(a)" data-stop-text="Stop&nbsp;(a)">Play&nbsp;(a)</button>
+                </div>
+                <div class="drum-card">
+                    <img src="tom2.jpg" alt="Product 2">
+                    <h2>Tom</h2>
+                    <button class="drum" id="sound5" data-sound="sounds/tom2.wav" data-play-text="Play&nbsp;(t)" data-stop-text="Stop&nbsp;(t)">Play&nbsp;(t)</button>
+                </div>
+                <div class="drum-card">
+                    <img src="cymbal.jpg" alt="Product 1">
+                    <h2>Cymbal</h2>
+                    <button class="drum" id="sound6" data-sound="sounds/cymbal.wav" data-play-text="Play&nbsp;(k)" data-stop-text="Stop&nbsp;(k)">Play&nbsp;(k)</button>
+                </div>
+              
+                
+                <!--You can add More Tone cards here... -->
+            </section>                
+        </div>  
+        <script src="script.js"></script> 
+    </body>
+</html>
