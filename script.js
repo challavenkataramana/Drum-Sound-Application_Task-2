@@ -21,51 +21,71 @@ document.addEventListener('keydown', (event) => {
     const soundId = keyMap[event.key.toLowerCase()];
     if (soundId) {
         const button=document.getElementById(soundId);
-        playorstop(button,button.dataset.sound);
+        play(button,button.dataset.sound);
     }
 });
 
-function playorstop(button, soundFile) {
-    if (currentAudio && currentSoundFile === soundFile && !currentAudio.paused) {
+function play(button, soundFile) {
+   /* if (currentAudio && currentSoundFile === soundFile && !currentAudio.paused) {
         stopsound(button);  
-    } else {
+    }
+    /*} else {
         if (currentAudio) {
             currentAudio.pause();
             currentAudio.currentTime = 0;
             resetbutton();  
-        }
+        } 
+    else
+    {  */
         currentAudio = new Audio(soundFile);
         currentAudio.play();
         currentSoundFile = soundFile;  
+        currentAudio.addEventListener('ended', () => {
+            currentAudio.currentTime = 0;
+            button.textContent = button.dataset.playText ;  
+            button.classList.add('play');
+            button.classList.remove('stop');
+        });
 
         button.textContent = button.dataset.stopText;
         button.classList.add('stop');
         button.classList.remove('play');
-    }
+    
+    
 }
 
 
 function playsound(button,soundFile) {
 
-    if(currentAudio && currentSoundFile === soundFile && !currentAudio.paused)
+   /* if(currentAudio && currentSoundFile === soundFile && !currentAudio.paused)
     {
         stopsound(button);
     }
-    else
+    /*
+    else 
     {
         if (currentAudio) {
             currentAudio.pause();
             currentAudio.currentTime = 0;
             resetbutton();
-        }
+        } 
+    else
+    {   */
         currentAudio = new Audio(soundFile);
         currentAudio.play();
-        currentSoundFile = soundFile; 
+        currentSoundFile = soundFile;
+        currentAudio.addEventListener('ended', () => {
+            currentAudio.currentTime = 0;
+            button.textContent = button.dataset.playText ;  
+            button.classList.add('play');
+            button.classList.remove('stop');
+        });
 
         button.textContent = button.dataset.stopText ;  
         button.classList.add('stop');
         button.classList.remove('play');
-    }
+
+    
 }
 
 function stopsound(button)
@@ -81,12 +101,13 @@ function stopsound(button)
         button.classList.remove('stop');
     }
     
-}
+} 
 
+/*
 function resetbutton() {
     document.querySelectorAll('.drum').forEach(button => {
         button.textContent = button.dataset.playText ; 
         button.classList.add('play');
         button.classList.remove('stop');
     });
-}
+} */
