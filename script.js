@@ -37,6 +37,9 @@ function play(button, soundFile) {
         } 
     else
     {  */
+    if (button.textContent === button.dataset.stopText) {
+        return;  // Prevent re-triggering the same sound
+    }
         currentAudio = new Audio(soundFile);
         currentAudio.play();
         currentSoundFile = soundFile;  
@@ -60,7 +63,10 @@ function playsound(button,soundFile) {
    /* if(currentAudio && currentSoundFile === soundFile && !currentAudio.paused)
     {
         stopsound(button);
-    }
+    }*/
+        if (button.textContent === button.dataset.stopText) {
+            return;  // Prevent re-triggering the same sound
+        }
     /*
     else 
     {
